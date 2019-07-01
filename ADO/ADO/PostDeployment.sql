@@ -1,0 +1,5 @@
+﻿SET IDENTITY_INSERT [Employee] ON;
+
+
+
+SET IDENTITY_INSERT [Employee] OFF;
