@@ -17,7 +17,7 @@ GO
 
 CREATE TRIGGER [dbo].[Trigger_Delete]
     ON [dbo].[Student]
-    FOR DELETE
+    INSTEAD OF DELETE
     AS
     BEGIN
         SET NoCount ON
