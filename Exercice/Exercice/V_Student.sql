@@ -1,4 +1,4 @@
 ﻿CREATE VIEW [dbo].[V_Student]
 	AS
-	SELECT * FROM [Student]
+	SELECT Id, FirstName, LastName, BirthDate, YearResult, SectionId FROM [Student]
 	WHERE Active = 1

@@ -66,6 +66,8 @@
     <Build Include="UpdateStudent.sql" />
     <Build Include="DeleteStudent.sql" />
     <Build Include="AddSection.sql" />
+    <Build Include="UpdateSection.sql" />
+    <Build Include="DeleteSection.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Exercice.refactorlog" />
