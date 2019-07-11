@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+using DLLAdo;
+
 
 
 namespace AdoExo
@@ -26,7 +28,7 @@ namespace AdoExo
                 using (SqlConnection connect = new SqlConnection())
                 {
                     connect.ConnectionString = SQLAuthConnectionString;
-
+                    #region Exo1
                     //using (SqlCommand command = connect.CreateCommand())
                     //{                        
                     //    command.CommandText = "SELECT Id, LastName, FirstName, YearResult FROM V_Student";
@@ -67,7 +69,9 @@ namespace AdoExo
                     //    Console.WriteLine("Moyenne annuelle : "+moy);
                     //    connect.Close();
                     //}
-                //}
+                    //}
+                    #endregion
+                    #region Exo2 Ajout Student
                     //////////////////// Ajout Student Aude /////////////////////
                     //using (SqlCommand command = connect.CreateCommand())
                     //{
@@ -79,32 +83,60 @@ namespace AdoExo
                     //}
 
                     /////////////////// Ajout Student Marceau //////////////////
+                    //using (SqlCommand command = connect.CreateCommand())
+                    //{
+                    //    connect.Open();
+                    //    command.CommandText = $"INSERT INTO Student(FirstName, LastName, BirthDate, YearResult, SectionId) OUTPUT inserted.Id" +
+                    //        $" values(@FirstName,@LastName, @BirthDate, @YearResult, @SectionId);";
+                    //    SqlParameter PFirstName = new SqlParameter("FirstName",marceau.FirstName);
+                    //    SqlParameter PLastName = new SqlParameter("LastName",marceau.LastName);
+                    //    SqlParameter PBirthDate = new SqlParameter("BirthDate", marceau.BirthDate);
+                    //    SqlParameter PYearResult = new SqlParameter("YearResult", marceau.YearResult);
+                    //    SqlParameter PSectionId = new SqlParameter("SectionId", marceau.SectionId );                        
+                    //    command.Parameters.AddRange(new SqlParameter[] { PLastName, PFirstName, PBirthDate, PYearResult, PSectionId });                        
+
+                    //    marceau.Id = (int)command.ExecuteScalar();
+                    //    Console.WriteLine(command.CommandText);
+                    //}
+                    #endregion
+                    #region Exo3 Update Section
+                    //////////////////// MODIF SECTION ////////////////////////
+                    //using (SqlCommand command = connect.CreateCommand())
+                    //{
+                    //    command.CommandText = "UpdateStudent";
+                    //    command.CommandType = CommandType.StoredProcedure;
+
+                    //    SqlParameter PId = new SqlParameter("Id", 26);
+                    //    SqlParameter PYearResult = new SqlParameter("YearResult", 20);
+                    //    SqlParameter PSectionId = new SqlParameter("SectionId", 1010 );                        
+                    //    command.Parameters.AddRange(new SqlParameter[] { PId, PYearResult, PSectionId });
+
+                    //    connect.Open();
+                    //    command.ExecuteNonQuery();
+
+                    //    Console.WriteLine(command.CommandText);
+                    //}
+                    #endregion
+                    #region Exo3 Delete Student
+                    //////////////////// DELETE STUDENT ////////////////////////
                     using (SqlCommand command = connect.CreateCommand())
                     {
-                        connect.Open();
-                        command.CommandText = $"INSERT INTO Student(FirstName, LastName, BirthDate, YearResult, SectionId) OUTPUT inserted.Id" +
-                            $" values(@FirstName,@LastName, @BirthDate, @YearResult, @SectionId);";
-                        SqlParameter PFirstName = new SqlParameter() { ParameterName = "FirstName", Value = marceau.FirstName };
-                        SqlParameter PLastName = new SqlParameter() { ParameterName = "LastName", Value = marceau.LastName };
-                        SqlParameter PBirthDate = new SqlParameter() { ParameterName = "BirthDate", Value = marceau.BirthDate.ToString("yyyy-MM-dd")};
-                        SqlParameter PYearResult = new SqlParameter() { ParameterName = "YearResult", Value = marceau.YearResult };
-                        SqlParameter PSectionId = new SqlParameter() { ParameterName = "SectionId", Value = marceau.SectionId };
-                        List<SqlParameter> Listparam = new List<SqlParameter>() { PLastName, PFirstName, PBirthDate, PYearResult, PSectionId };                        
-                        command.Parameters.Add(PFirstName);
-                        command.Parameters.Add(PLastName);
-                        command.Parameters.Add(PBirthDate);
-                        command.Parameters.Add(PYearResult);
-                        command.Parameters.Add(PSectionId);
+                        command.CommandText = "DeleteStudent";
+                        command.CommandType = CommandType.StoredProcedure;
 
-                        marceau.Id = (int)command.ExecuteScalar();
+                        SqlParameter PId = new SqlParameter("Id", 27);                        
+                        command.Parameters.Add( PId );
+
+                        connect.Open();
+                        command.ExecuteNonQuery();
+
                         Console.WriteLine(command.CommandText);
                     }
-
+                    #endregion
 
                     connect.Close();
-                       
-                    
                 }
+                
                 
             }
             catch (Exception e)

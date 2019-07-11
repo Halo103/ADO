@@ -7,6 +7,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Exercice", "Exercice\Exerci
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdoExo", "AdoExo\AdoExo.csproj", "{55AA4208-942A-4040-9DDB-5BE4536567A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLLAdo", "DLLAdo\DLLAdo.csproj", "{C2C5B2F4-ABF3-4698-A095-A2681649254F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{55AA4208-942A-4040-9DDB-5BE4536567A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55AA4208-942A-4040-9DDB-5BE4536567A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55AA4208-942A-4040-9DDB-5BE4536567A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2C5B2F4-ABF3-4698-A095-A2681649254F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2C5B2F4-ABF3-4698-A095-A2681649254F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2C5B2F4-ABF3-4698-A095-A2681649254F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2C5B2F4-ABF3-4698-A095-A2681649254F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
